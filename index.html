@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>davidIRC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(#e66465, #9198e5);
+            
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .chatbox {
+            text-align: left;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            padding: 10px;
+            background: #fff;
+            height: 60vh;
+            width: 90vw;
+            border: 1px solid black;
+            overflow: auto;
+            border-radius: 4px;
+        }
+
+        button {
+            border-radius: 4px;
+            border: 1px solid black;
+        }
+
+        input {
+            border-radius: 4px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="app.js"></script>
+
+    <h4>To host a server you can use the NodeJS WSS server (you'll need a SSL cert!)</h4>
+    <input type="text" placeholder="Username" id="username" value="Guest">
+    <input type="text" placeholder="Server URL with port 4127" id="serverurl">
+    <button id="join" ontouchstart="Join_Server();" onclick="Join_Server();">Join</button>
+    <br><br>
+    <div class="chatbox" id="chatbox">
+        Waiting for action...<br>
+    </div>
+    <input type="text" placeholder="Message" onkeypress="pressedKey(event)" id="msgbox">
+    <button style="visibility: hidden; position: absolute;" id="send" ontouchstart="Send_Server();" onclick="Send_Server();">Send</button>
+    <button style="visibility: hidden; position: absolute;" id="leave" ontouchstart="Leave_Server();" onclick="Leave_Server();">Leave</button>
+</body>
+
+</html>
